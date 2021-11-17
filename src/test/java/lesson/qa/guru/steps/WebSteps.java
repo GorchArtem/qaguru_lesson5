@@ -2,7 +2,7 @@ package lesson.qa.guru.steps;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-import org.checkerframework.common.value.qual.StringVal;
+
 
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
@@ -16,6 +16,7 @@ public class WebSteps {
     public void openMainPage(){
         open("https://github.com");
     }
+
     @Step("Find repository {repository}")
     public void searchForRepository(String repository){
         $("[data-test-selector=nav-search-input]").click();
@@ -25,10 +26,10 @@ public class WebSteps {
 
     @Step("Step to repository {repository}")
     public void goToRepository(String repository){
-        $(linkText("{repository}")).click();
+        $(linkText(repository)).click();
     }
 
-    @Step("Open Issues tab ")
+    @Step("Open Issues tab")
     public void openIssueTab(){
         $(partialLinkText("Issues")).click();
     }
