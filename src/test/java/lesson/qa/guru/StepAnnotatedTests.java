@@ -8,10 +8,8 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class StepAnnotatedTests {
-
     private static final String REPOSITORY = "eroshenkoam/allure-example";
     private static final Integer ISSUE_NUMBER = 66;
-
     private WebSteps steps = new WebSteps();
 
     @Test

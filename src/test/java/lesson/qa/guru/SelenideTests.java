@@ -1,6 +1,9 @@
 package lesson.qa.guru;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
@@ -11,14 +14,17 @@ import static org.openqa.selenium.By.linkText;
 import static org.openqa.selenium.By.partialLinkText;
 
 public class SelenideTests {
+    SelenideElement gitInput = $("[data-test-selector=nav-search-input]");
 
     @Test
-    public void testGithub(){
+    public void testGithub() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         open("https://github.com");
 
-        $("[data-test-selector=nav-search-input]").click();
-        $("[data-test-selector=nav-search-input]").sendKeys("eroshenkoam/allure-example");
-        $("[data-test-selector=nav-search-input]").submit();
+        gitInput.click();
+        gitInput.sendKeys("eroshenkoam/allure-example");
+        gitInput.submit();
 
         $(linkText("eroshenkoam/allure-example")).click();
         $(partialLinkText("Issues")).click();
