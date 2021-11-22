@@ -13,29 +13,29 @@ import static org.openqa.selenium.By.partialLinkText;
 public class WebSteps {
 
     @Step("Open general page")
-    public void openMainPage(){
+    public void openMainPage() {
         open("https://github.com");
     }
 
     @Step("Find repository {repository}")
-    public void searchForRepository(String repository){
+    public void searchForRepository(String repository) {
         $("[data-test-selector=nav-search-input]").click();
         $("[data-test-selector=nav-search-input]").sendKeys(repository);
         $("[data-test-selector=nav-search-input]").submit();
     }
 
     @Step("Step to repository {repository}")
-    public void goToRepository(String repository){
+    public void goToRepository(String repository) {
         $(linkText(repository)).click();
     }
 
     @Step("Open Issues tab")
-    public void openIssueTab(){
+    public void openIssueTab() {
         $(partialLinkText("Issues")).click();
     }
 
     @Step("Assert Issues number {number}")
-    public void shouldSeeIssueNumber(int number){
+    public void shouldSeeIssueNumber(int number) {
         $(withText("#" + number)).should(Condition.visible);
     }
 }
