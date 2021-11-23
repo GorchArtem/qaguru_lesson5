@@ -16,7 +16,7 @@ public class StepLambdaTests {
     private static final Integer ISSUE_NUMBER = 66;
 
     @Test
-    public void testGithub(){
+    public void testGithub() {
         step("Open general page", () -> {
             open("https://github.com");
         });
@@ -34,10 +34,5 @@ public class StepLambdaTests {
         step("Assert Issues number " + ISSUE_NUMBER, () -> {
             $(withText("#" + ISSUE_NUMBER)).should(Condition.visible);
         });
-
-
-
-
-
     }
 }
