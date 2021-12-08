@@ -1,4 +1,4 @@
-package lesson.qa.guru.steps;
+package lesson_6_allure.steps;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;

@@ -1,4 +1,4 @@
-package lesson.qa.guru;
+package lesson_6_allure.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;

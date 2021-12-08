@@ -1,6 +1,6 @@
-package lesson.qa.guru;
+package lesson_6_allure.tests;
 
-import lesson.qa.guru.steps.WebSteps;
+import lesson_6_allure.steps.WebSteps;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$;
